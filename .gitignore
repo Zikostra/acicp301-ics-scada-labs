@@ -1,0 +1,35 @@
+# Virtual machines and disk images
+*.ova
+*.ovf
+*.vdi
+*.vmdk
+*.qcow2
+*.vhd
+*.vhdx
+
+# Snapshots and VM folders
+Snapshots/
+VirtualBox VMs/
+
+# Course installation/archive files
+*.iso
+*.zip
+*.7z
+*.tar
+*.tar.gz
+
+# Secrets and credentials
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+credentials*
+secrets*
+
+# Temporary/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*~
