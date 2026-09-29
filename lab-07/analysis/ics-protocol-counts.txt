@@ -1,6 +1,0 @@
-http            11437 packets
-ftp                94 packets
-modbus             19 packets
-dnp3                0 packets
-enip                0 packets
-s7comm         172783 packets

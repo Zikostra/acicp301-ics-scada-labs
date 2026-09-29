@@ -1,0 +1,6 @@
+http            12000 packets
+ftp              3000 packets
+modbus         100000 packets
+dnp3                0 packets
+enip            12000 packets
+s7comm          12000 packets

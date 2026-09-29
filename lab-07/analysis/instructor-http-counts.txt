@@ -1,0 +1,3 @@
+http.authbasic                                  5 packets
+http.request.method                          6000 packets
+http.request.method == "POST"                  54 packets

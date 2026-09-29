@@ -1,3 +1,0 @@
-http.authbasic                                 21 packets
-http.request.method                          5806 packets
-http.request.method == "POST"                  15 packets

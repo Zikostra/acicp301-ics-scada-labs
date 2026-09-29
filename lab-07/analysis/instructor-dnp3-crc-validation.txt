@@ -1,0 +1,14 @@
+Instructor PCAP DNP3/TCP validation
+------------------------------------
+TCP/20000 payload packets:      28000
+Payloads beginning 05 64:       28000
+Header CRC equal 00 00:         28000
+Valid DNP3 header CRCs:         0
+Invalid DNP3 header CRCs:       28000
+
+Representative packets:
+Frame 115001: header=05640fc401000004 captured_crc=0000 expected_crc=9a11
+Frame 115002: header=05640f4401000004 captured_crc=0000 expected_crc=ee70
+Frame 115003: header=05640fc401000004 captured_crc=0000 expected_crc=9a11
+Frame 115004: header=05640f4401000004 captured_crc=0000 expected_crc=ee70
+Frame 115005: header=05640fc401000004 captured_crc=0000 expected_crc=9a11
