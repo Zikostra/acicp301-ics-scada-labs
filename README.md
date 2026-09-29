@@ -8,7 +8,7 @@ This repository documents the practical laboratory work completed for **ACICP301
 |---|---|---|
 | Lab 01 | Introduction to Programmable Logic Controllers and OpenPLC | Completed |
 | Lab 02 | PLC Programming Languages and Motor Control Logic | Completed |
-| Lab 03 | Building an Automated Tank Fill PLC Program | Pending |
+| Lab 03 | Building an Automated Tank Fill PLC Program | Completed |
 | Lab 04 | SCADA System Operation and Industrial Process Visualization | Pending |
 | Lab 05 | Building and Animating a SCADA Human Machine Interface | Pending |
 | Lab 06 | Modbus Communication and Industrial Protocol Analysis | Pending |
