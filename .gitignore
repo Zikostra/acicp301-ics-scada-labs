@@ -33,3 +33,7 @@ secrets*
 Thumbs.db
 *.swp
 *~
+
+# Lab 07 packet captures - local evidence only
+lab-07/pcap/*.pcap
+lab-07/pcap/*.pcapng
