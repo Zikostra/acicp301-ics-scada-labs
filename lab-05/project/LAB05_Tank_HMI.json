@@ -1,0 +1,165 @@
+{
+  "devices": {
+    "openplc": {
+      "id": "openplc",
+      "name": "OpenPLC Tank Fill",
+      "type": "ModbusTCP",
+      "enabled": true,
+      "property": {
+        "address": "192.168.57.102",
+        "port": "502",
+        "slaveid": "1"
+      },
+      "tags": {
+        "tank_level_lit": {
+          "id": "tank_level_lit",
+          "name": "Tank Level",
+          "type": "UInt16",
+          "memaddress": "300000",
+          "address": "81"
+        },
+        "tank_valve_open": {
+          "id": "tank_valve_open",
+          "name": "Tank Valve Open",
+          "type": "Bool",
+          "memaddress": "0",
+          "address": "1"
+        }
+      },
+      "polling": 500
+    }
+  },
+  "hmi": {
+    "views": [
+      {
+        "id": "lab05_main",
+        "name": "LAB05 Tank HMI",
+        "profile": {
+          "width": 1200,
+          "height": 800,
+          "bkcolor": "#d1d5db"
+        },
+        "variables": {},
+        "items": {
+          "GXP_LAB05_LEVEL": {
+            "id": "GXP_LAB05_LEVEL",
+            "type": "svg-ext-gauge_progress",
+            "name": "Tank Level",
+            "property": {
+              "events": [],
+              "actions": [],
+              "ranges": [
+                {
+                  "type": "minmax",
+                  "min": 0,
+                  "max": 10,
+                  "style": [
+                    true,
+                    true
+                  ],
+                  "color": "#4b5563",
+                  "stroke": ""
+                }
+              ],
+              "variable": "Tank Level",
+              "variableSrc": "OpenPLC Tank Fill",
+              "variableId": "tank_level_lit",
+              "alarmId": "",
+              "alarmSrc": "",
+              "alarm": "",
+              "alarmColor": ""
+            },
+            "label": "HtmlProgress"
+          },
+          "VAL_LAB05_LEVEL": {
+            "id": "VAL_LAB05_LEVEL",
+            "type": "svg-ext-value",
+            "name": "Tank Level Value",
+            "property": {
+              "events": [],
+              "actions": [],
+              "variable": "Tank Level",
+              "variableSrc": "OpenPLC Tank Fill",
+              "variableId": "tank_level_lit",
+              "alarmId": "",
+              "alarmSrc": "",
+              "alarm": "",
+              "alarmColor": "",
+              "ranges": [
+                {
+                  "type": "unit",
+                  "min": 0,
+                  "max": 10,
+                  "color": "",
+                  "stroke": "",
+                  "text": "ft"
+                }
+              ]
+            },
+            "label": "Value"
+          },
+          "SHE_LAB05_VALVE": {
+            "id": "SHE_LAB05_VALVE",
+            "type": "svg-ext-proceng-valvecx",
+            "name": "Tank Valve Open",
+            "property": {
+              "events": [],
+              "actions": [],
+              "variable": "Tank Valve Open",
+              "variableSrc": "OpenPLC Tank Fill",
+              "variableId": "tank_valve_open",
+              "alarmId": "",
+              "alarmSrc": "",
+              "alarm": "",
+              "alarmColor": "",
+              "ranges": [
+                {
+                  "type": "range",
+                  "min": 0,
+                  "max": 0,
+                  "color": "#6b7280",
+                  "stroke": "#1f2937"
+                },
+                {
+                  "type": "range",
+                  "min": 1,
+                  "max": 1,
+                  "color": "#16a34a",
+                  "stroke": "#14532d"
+                }
+              ]
+            },
+            "label": "Proc-Eng"
+          }
+        },
+        "svgcontent": "<svg width=\"1200\" height=\"800\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:svg=\"http://www.w3.org/2000/svg\">\n <!-- process pipe -->\n <!-- dynamic motor-actuated valve -->\n <!-- tank shell -->\n <!-- dynamic 0-10 ft level gauge -->\n <!-- dynamic numeric value -->\n <!-- connection card -->\n <g>\n  <title>Layer 1</title>\n  <rect id=\"svg_09e66835-60aa454d\" fill=\"#d1d5db\" height=\"800\" width=\"1200\"/>\n  <rect id=\"svg_df5f7b15-3bc846cc\" fill=\"#374151\" height=\"92\" width=\"1200\" y=\"0\" x=\"0\"/>\n  <text id=\"svg_e57a8aa2-44b14ee6\" fill=\"#ffffff\" font-weight=\"700\" font-size=\"30\" font-family=\"Arial, sans-serif\" y=\"54\" x=\"48\">ICDFA Lab 05 \u2014 High-Performance Tank HMI</text>\n  <text id=\"svg_61f2c9fc-c4ce4ed9\" fill=\"#e5e7eb\" font-size=\"15\" font-family=\"Arial, sans-serif\" y=\"78\" x=\"48\">OpenPLC Tank Fill \u2022 Modbus TCP \u2022 restrained operator display</text>\n  <rect id=\"svg_1d2b9c73-f92f4723\" stroke-width=\"2\" stroke=\"#9ca3af\" fill=\"#e5e7eb\" rx=\"10\" height=\"610\" width=\"1112\" y=\"122\" x=\"44\"/>\n  <text id=\"svg_d248f519-39334fc5\" fill=\"#111827\" font-weight=\"700\" font-size=\"20\" font-family=\"Arial, sans-serif\" y=\"164\" x=\"76\">Tank Fill Process</text>\n  <text id=\"svg_4174f4e2-40fd4638\" fill=\"#4b5563\" font-size=\"14\" font-family=\"Arial, sans-serif\" y=\"192\" x=\"76\">Tank Level: %IW80 / Input Register 80 \u2022 Fill Valve: %QX0.0 / Coil 0</text>\n  <line id=\"svg_688d591b-d35342ad\" stroke-width=\"18\" stroke=\"#6b7280\" y2=\"420\" x2=\"520\" y1=\"420\" x1=\"110\"/>\n  <g data-name=\"Tank Valve Open\" stroke-width=\"3\" stroke=\"#1f2937\" fill=\"#6b7280\" type=\"svg-ext-proceng-valvecx\" id=\"SHE_LAB05_VALVE\">\n   <path id=\"svg_b752919a-ad6e4675\" d=\"M360,388L404,420L360,452L360,388z\"/>\n   <path id=\"svg_d3d3d43c-40cf4aab\" d=\"M448,388L404,420L448,452L448,388z\"/>\n   <rect id=\"svg_80f2e66d-ad124177\" rx=\"4\" height=\"96\" width=\"20\" y=\"372\" x=\"394\"/>\n   <rect id=\"svg_c841dc52-4a8a4d25\" rx=\"5\" height=\"28\" width=\"44\" y=\"338\" x=\"382\"/>\n  </g>\n  <text id=\"svg_72e3ba69-a0a24a2e\" fill=\"#111827\" text-anchor=\"middle\" font-weight=\"700\" font-size=\"17\" font-family=\"Arial, sans-serif\" y=\"505\" x=\"404\">Motor-actuated fill valve</text>\n  <text id=\"svg_9c30c0d8-7da940a2\" fill=\"#4b5563\" text-anchor=\"middle\" font-size=\"14\" font-family=\"Arial, sans-serif\" y=\"529\" x=\"404\">Coil 0</text>\n  <rect id=\"svg_dcd5001a-79204330\" stroke-width=\"3\" stroke=\"#1f2937\" fill=\"#f3f4f6\" rx=\"36\" height=\"340\" width=\"300\" y=\"240\" x=\"520\"/>\n  <ellipse id=\"svg_eebf264b-47774e2f\" stroke-width=\"3\" stroke=\"#1f2937\" fill=\"#f9fafb\" ry=\"34\" rx=\"150\" cy=\"240\" cx=\"670\"/>\n  <ellipse id=\"svg_64c25a2e-00214580\" stroke-width=\"3\" stroke=\"#1f2937\" fill=\"#f3f4f6\" ry=\"34\" rx=\"150\" cy=\"580\" cx=\"670\"/>\n  <g data-name=\"Tank Level\" type=\"svg-ext-gauge_progress\" id=\"GXP_LAB05_LEVEL\">\n   <rect stroke=\"#9ca3af\" fill=\"#d1d5db\" height=\"285\" width=\"244\" y=\"270\" x=\"548\" id=\"A-GXP_LAB05_LEVEL\"/>\n   <rect fill=\"#4b5563\" height=\"0\" width=\"244\" y=\"555\" x=\"548\" id=\"B-GXP_LAB05_LEVEL\"/>\n   <foreignObject height=\"285\" width=\"244\" y=\"270\" x=\"548\" id=\"H-GXP_LAB05_LEVEL\"/>\n  </g>\n  <line id=\"svg_7f1ec49b-820b4e1c\" stroke-width=\"2\" stroke=\"#1f2937\" y2=\"555\" x2=\"798\" y1=\"555\" x1=\"542\"/>\n  <text id=\"svg_a680017c-e09a4bb2\" fill=\"#111827\" text-anchor=\"middle\" font-weight=\"700\" font-size=\"22\" font-family=\"Arial, sans-serif\" y=\"626\" x=\"670\">Process Tank</text>\n  <text id=\"svg_fed3f17b-bedf488a\" fill=\"#4b5563\" text-anchor=\"middle\" font-size=\"15\" font-family=\"Arial, sans-serif\" y=\"652\" x=\"670\">Engineering range: 0\u201310 ft</text>\n  <rect id=\"svg_6eb37e93-4d1d4199\" stroke=\"#9ca3af\" fill=\"#f3f4f6\" rx=\"8\" height=\"132\" width=\"230\" y=\"240\" x=\"868\"/>\n  <text id=\"svg_d673c9ae-7f8e4ef2\" fill=\"#111827\" text-anchor=\"middle\" font-weight=\"700\" font-size=\"16\" font-family=\"Arial, sans-serif\" y=\"276\" x=\"983\">Tank Level</text>\n  <g data-name=\"Tank Level Value\" fill=\"#111827\" type=\"svg-ext-value\" id=\"VAL_LAB05_LEVEL\">\n   <text text-anchor=\"middle\" font-weight=\"700\" font-size=\"46\" font-family=\"Arial, sans-serif\" y=\"332\" x=\"983\" id=\"VAL_DISPLAY_LAB05\">##.##</text>\n  </g>\n  <rect id=\"svg_e04c2191-48c047ec\" stroke=\"#9ca3af\" fill=\"#f3f4f6\" rx=\"8\" height=\"178\" width=\"230\" y=\"402\" x=\"868\"/>\n  <text id=\"svg_b6492c71-28954635\" fill=\"#111827\" font-weight=\"700\" font-size=\"16\" font-family=\"Arial, sans-serif\" y=\"438\" x=\"895\">Process connection</text>\n  <circle id=\"svg_7f972427-842648d1\" fill=\"#16a34a\" r=\"8\" cy=\"472\" cx=\"908\"/>\n  <text id=\"svg_4cf9091d-83f54008\" fill=\"#374151\" font-size=\"14\" font-family=\"Arial, sans-serif\" y=\"478\" x=\"928\">OpenPLC Modbus TCP</text>\n  <text id=\"svg_8e5cbee3-624c400a\" fill=\"#4b5563\" font-size=\"14\" font-family=\"Arial, sans-serif\" y=\"510\" x=\"895\">PLC: 192.168.57.102:502</text>\n  <text id=\"svg_55542dd9-f3dc44dc\" fill=\"#4b5563\" font-size=\"14\" font-family=\"Arial, sans-serif\" y=\"536\" x=\"895\">Poll interval: 500 ms</text>\n  <text id=\"svg_489bed94-5265465a\" fill=\"#4b5563\" font-size=\"14\" font-family=\"Arial, sans-serif\" y=\"562\" x=\"895\">Normal-state palette: neutral</text>\n  <text id=\"svg_15e86e45-655240eb\" fill=\"#4b5563\" font-size=\"13\" font-family=\"Arial, sans-serif\" y=\"699\" x=\"76\">High-performance HMI principle: neutral normal states; color is reserved for meaningful state indication.</text>\n </g>\n</svg>"
+      }
+    ],
+    "layout": {
+      "start": "lab05_main",
+      "header": {},
+      "navigation": {
+        "mode": "fix",
+        "type": "inline",
+        "items": [
+          {
+            "icon": "home",
+            "view": "lab05_main",
+            "link": "",
+            "text": "Tank HMI"
+          }
+        ]
+      }
+    }
+  },
+  "name": "LAB05 Tank HMI",
+  "version": "1.00",
+  "charts": [],
+  "server": {
+    "id": "0",
+    "name": "ICDFA Lab 05 FUXA Server",
+    "type": "FuxaServer",
+    "property": {},
+    "polling": 1000
+  }
+}
