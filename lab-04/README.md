@@ -4,8 +4,8 @@
 **Environment:** Authorized ICDFA training virtual machines on an isolated VirtualBox host-only network  
 **Date completed:** 30 September 2026  
 
-> **Student Name:** ______________________________  
-> **Registration Number:** ________________________
+> **Student Name:** Praise Nze
+> **Registration Number:** C11/26/ACIS/17358
 
 ---
 
