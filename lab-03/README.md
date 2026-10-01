@@ -1,5 +1,9 @@
 # Lab 03 — Building Your First PLC Program
 
+> **Student Name:** Praise Nze
+
+> **Registration Number:** C11/26/ACIS/17358
+
 ## Objective
 
 The objective of this laboratory was to create a new OpenPLC Ladder Diagram program for an automated tank-fill process.
