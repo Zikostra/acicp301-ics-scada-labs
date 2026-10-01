@@ -1,5 +1,9 @@
 # Lab 02 — PLC Programming Languages and Motor Control Logic
 
+> **Student Name:** Praise Nze
+
+> **Registration Number:** C11/26/ACIS/17358
+
 ## Objective
 
 The objective of this laboratory was to examine how the same PLC motor-control requirement can be represented using five industrial PLC programming approaches:
