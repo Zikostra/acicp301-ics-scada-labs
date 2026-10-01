@@ -1,0 +1,28 @@
+LAB 06 — MODBUS FC04 REQUEST/RESPONSE ANALYSIS
+
+REQUEST
+Frame: 85
+Time: 7.019477 seconds
+Source: 192.168.57.101:55804
+Destination: 192.168.57.102:502
+Transaction ID: 79
+Function Code: 04 — Read Input Registers
+Reference Register: 80
+Quantity: 1 register
+
+RESPONSE
+Frame: 86
+Time: 7.021323 seconds
+Source: 192.168.57.102:502
+Destination: 192.168.57.101:55804
+Transaction ID: 79
+Function Code: 04 — Read Input Registers
+Byte Count: 2
+Register Value: 8
+
+INTERPRETATION
+FUXA at 192.168.57.101 requested one input register from OpenPLC
+at 192.168.57.102 using Modbus Function Code 04. The requested
+register was Input Register 80, which is mapped to the Tank Level
+value in the TankFillSim process. OpenPLC returned the value 8.
+The identical Transaction ID 79 links the request and response.

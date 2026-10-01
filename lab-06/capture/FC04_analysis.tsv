@@ -1,0 +1,1 @@
+frame.number|frame.time_relative|ip.src|ip.dst|mbtcp.trans_id|modbus.func_code|modbus.reference_num|modbus.word_cnt|modbus.regval_uint16
