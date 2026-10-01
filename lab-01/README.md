@@ -5,7 +5,10 @@
 **Practical:** Lab 01 — Introduction to Programmable Logic Controllers and OpenPLC  
 **Environment:** ICDFA-authorized PLC Engineering virtual machine  
 **Platform:** OpenPLC Editor  
-**Status:** Completed
+
+> **Student Name:** Praise Nze
+
+> **Registration Number:** C11/26/ACIS/17358
 
 ---
 
